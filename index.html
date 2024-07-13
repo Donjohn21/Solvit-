@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolvIT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-L/MGpEKn04htA9oMfNY9uxR3/4s2y1/CWyqLlMgNLMbG+q4dOhgOAp/aL2DhNGb9J6UGw1bDFd64f86g53k+jA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="light-mode">
+    <div id="background-overlay"></div>
+    <div id="chat-container">
+        <div id="sidebar">
+            <h2>SolvIT</h2>
+            <div id="theme-toggle">
+                <button id="theme-switch" title="Modo claro">
+                    <img id="theme-icon" src="img/image.png" alt="Icono de Tema">
+                </button>
+            </div>
+            <div id="chat-history"></div>
+        </div>
+        <div id="chat-box">
+            <div id="messages"></div>
+            <div id="input-area">
+                <input type="text" id="user-input" placeholder="Escribe tu pregunta...">
+                <button id="send-btn">Enviar</button>
+            </div>
+            <div id="center-content">
+                <div id="brand-text">SolvIT<img src="img/logo.png" alt="Logo SolvIT" id="brand-logo"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

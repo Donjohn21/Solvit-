@@ -1,0 +1,331 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0.01; /* Empieza con opacidad mínima */
+    }
+    50% {
+        opacity: 0.02; /* Llega a una opacidad ligeramente mayor a la mitad */
+    }
+    100% {
+        opacity: 0.01; /* Termina con opacidad mínima */
+    }
+}
+
+/* Estilos del fondo overlay */
+#background-overlay {
+    position: fixed; /* Posición fija para cubrir toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/math.png'); /* Ruta a tu imagen de fondo */
+    background-repeat: repeat; /* Repite el fondo si es necesario */
+    background-size: cover; /* Cubre toda el área del fondo */
+    pointer-events: none; /* Permite clics a través del overlay */
+    z-index: 0; /* Z-index bajo para estar detrás del contenido */
+    animation: fadeInOut 8s infinite; /* Aplica la animación durante 8 segundos en bucle */
+}
+
+.light-mode #background-overlay {
+    opacity: 0.02; /* Opacidad para el modo claro */
+}
+
+.dark-mode #background-overlay {
+    opacity: 0.01; /* Opacidad para el modo oscuro */
+}
+
+#chat-container {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    background-color: var(--container-bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+#brand-text {
+    position: absolute;
+    top: 40%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    font-size: 3rem; /* Tamaño de fuente aumentado */
+    transition: opacity 4s ease-in-out;
+}
+
+#brand-text.hidden {
+    opacity: 0; /* Oculta el texto */
+}
+
+.hidden {
+    display: none;
+}
+
+#brand-logo {
+    width: 50px; /* Ajusta el tamaño del logo según tus necesidades */
+    margin-left: 10px; /* Ajusta el margen según tu diseño */
+}
+
+/* Estilos para modo oscuro */
+.dark-mode #brand-text {
+    color: #ffffff; /* Cambiar a color blanco u otro color claro */
+}
+
+.dark-mode #brand-logo{
+    content: url('img/logo-dark.png'); /* Cambia el logo a la versión en blanco */
+}
+
+#sidebar {
+    width: 30%;
+    background-color: var(--sidebar-bg-color);
+    color: var(--sidebar-text-color);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+}
+
+#sidebar h2 {
+    margin-top: 0;
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar sobre el título */
+}
+
+#theme-toggle {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#theme-switch {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--theme-toggle-color);
+    transition: color 0.3s ease;
+}
+
+#theme-switch:hover {
+    color: var(--theme-toggle-hover-color);
+}
+
+#theme-icon {
+    margin-right: 5px;
+}
+
+#chat-history {
+    margin-top: 20px;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+}
+
+#chat-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#messages {
+    padding: 20px;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--message-bg-color);
+    color: var(--message-text-color);
+    max-width: 70%;
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: var(--user-message-bg-color);
+    color: var(--user-message-text-color);
+}
+
+#input-area {
+    display: flex;
+    border-top: 1px solid var(--input-border-color);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#user-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+}
+
+#send-btn {
+    border: none;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#send-btn:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+/* Light Mode Variables */
+body.light-mode {
+    --bg-color: #f5f5f5;
+    --container-bg-color: white;
+    --sidebar-bg-color: #2c3e50;
+    --sidebar-text-color: white;
+    --message-bg-color: #ecf0f1;
+    --message-text-color: black;
+    --user-message-bg-color: #3498db;
+    --user-message-text-color: white;
+    --input-border-color: #ecf0f1;
+    --input-bg-color: white;
+    --input-text-color: black;
+    --button-bg-color: #3498db;
+    --button-text-color: white;
+    --button-hover-bg-color: #2980b9;
+    --theme-toggle-color: #3498db;
+    --theme-toggle-hover-color: #2980b9;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --bg-color: #2c3e50;
+    --container-bg-color: #34495e;
+    --sidebar-bg-color: #1c2833;
+    --sidebar-text-color: white;
+    --message-bg-color: #566573;
+    --message-text-color: white;
+    --user-message-bg-color: #2980b9;
+    --user-message-text-color: white;
+    --input-border-color: #566573;
+    --input-bg-color: #2c3e50;
+    --input-text-color: white;
+    --button-bg-color: #2980b9;
+    --button-text-color: white;
+    --button-hover-bg-color: #1c6ea6;
+    --theme-toggle-color: #2980b9;
+    --theme-toggle-hover-color: #1c6ea6;
+}
+
+/* Estilos para el tema-toggle y el icono de tema */
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#theme-icon {
+    width: 30px; /* Ajusta el tamaño según sea necesario */
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Agrega transición al cambio de imagen */
+#theme-icon {
+    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de imagen */
+}
+
+#symbols-container {
+    position: absolute;
+    top: 50px; /* Ajusta según sea necesario para evitar el botón de cambio de tema */
+    left: 20px;
+    z-index: 10; /* Asegura que esté por encima del chatbot */
+}
+
+.math-icon {
+    width: 30px; /* Ajusta el tamaño según sea necesario */
+    height: 30px;
+    margin-right: 10px;
+    animation: moveIcon 2s infinite alternate ease-in-out; /* Animación para movimiento */
+}
+
+@keyframes moveIcon {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); } /* Ajusta la distancia y la dirección del movimiento */
+}
+
+
+/* Tooltip container */
+button[title] {
+    position: relative; /* Contenedor relativo para posicionar el tooltip */
+    cursor: pointer; /* Cambia el cursor cuando pasa sobre el botón */
+}
+
+/* Tooltip text for light mode */
+button[title]::after {
+    content: attr(title); /* Contenido del tooltip usando el atributo title */
+    position: absolute; /* Posición absoluta para posicionar el tooltip */
+    top: 120%; /* Posiciona el tooltip debajo del botón */
+    left: 50%; /* Centra el tooltip horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición horizontal */
+    background-color: #333; /* Fondo del tooltip en modo claro */
+    color: #fff; /* Color del texto en modo claro */
+    padding: 5px 8px; /* Espaciado interno más pequeño */
+    border-radius: 4px; /* Bordes redondeados */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    opacity: 0; /* Tooltip invisible inicialmente */
+    visibility: hidden; /* Tooltip oculto inicialmente */
+    transition: opacity 0.3s; /* Transición suave para la visibilidad */
+    z-index: 10; /* Asegura que el tooltip esté sobre otros elementos */
+    font-size: 10px; /* Tamaño de fuente más pequeño */
+}
+
+/* Tooltip arrow for light mode */
+button[title]::before {
+    content: '';
+    position: absolute;
+    top: 110%; /* Posiciona la flecha justo debajo del botón */
+    left: 50%; /* Centra la flecha horizontalmente */
+    transform: translateX(-50%);
+    border-width: 5px; /* Tamaño de la flecha */
+    border-style: solid;
+    border-color: #333 transparent transparent transparent; /* Color de la flecha en modo claro */
+    opacity: 0; /* Flecha invisible inicialmente */
+    visibility: hidden; /* Flecha oculta inicialmente */
+    transition: opacity 0.3s; /* Transición suave para la visibilidad */
+    z-index: 10; /* Asegura que la flecha esté sobre otros elementos */
+}
+
+/* Tooltip text for dark mode */
+.dark-mode button[title]::after {
+    background-color: #fff; /* Fondo del tooltip en modo oscuro */
+    color: #000; /* Color del texto en modo oscuro */
+}
+
+/* Tooltip arrow for dark mode */
+.dark-mode button[title]::before {
+    border-color: #fff transparent transparent transparent; /* Color de la flecha en modo oscuro */
+}
+
+/* Show the tooltip text when hovering */
+button[title]:hover::after,
+button[title]:hover::before {
+    opacity: 1; /* Muestra el tooltip */
+    visibility: visible; /* Muestra el tooltip */
+}

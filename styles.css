@@ -97,7 +97,10 @@ body {
 }
 
 #sidebar h2 {
+<<<<<<< HEAD
     margin-bottom: 53px;
+=======
+>>>>>>> 05788b03f0c03408c24524831250e1950b58619a
     margin-top: 0;
     cursor: pointer; /* Cambia el cursor a un puntero al pasar sobre el título */
 }
@@ -126,12 +129,16 @@ body {
 }
 
 #chat-history {
+<<<<<<< HEAD
     max-height: 400px;
+=======
+>>>>>>> 05788b03f0c03408c24524831250e1950b58619a
     margin-top: 20px;
     height: calc(100% - 40px);
     overflow-y: auto;
 }
 
+<<<<<<< HEAD
 /* Custom scrollbar styles */
 #chat-history::-webkit-scrollbar {
     width: 8px;  /* Adjust the width of the scrollbar */
@@ -146,6 +153,8 @@ body {
     background: #555;  /* Color of the thumb when hovered */
 }
 
+=======
+>>>>>>> 05788b03f0c03408c24524831250e1950b58619a
 #chat-box {
     flex: 1;
     display: flex;
@@ -154,6 +163,7 @@ body {
 }
 
 #messages {
+<<<<<<< HEAD
     margin-top: 20px; /* Ajusta el valor del margen superior según tus necesidades */
     padding: 20px;
     height: calc(100% - 60px);
@@ -178,6 +188,11 @@ body {
 
 #messages::-webkit-scrollbar-track {
     background: transparent;  /* Transparent background for the scrollbar track */
+=======
+    padding: 20px;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+>>>>>>> 05788b03f0c03408c24524831250e1950b58619a
 }
 
 .message {
@@ -365,6 +380,7 @@ button[title]:hover::after,
 button[title]:hover::before {
     opacity: 1; /* Muestra el tooltip */
     visibility: visible; /* Muestra el tooltip */
+<<<<<<< HEAD
 }
 
 /* Estilos para el historial de chat */
@@ -408,4 +424,6 @@ button[title]:hover::before {
     position: fixed; /* Fijo en la página, ajusta según sea necesario */
     bottom: 535px; /* A 20px de la parte inferior */
     right: 945px; /* A 20px de la parte derecha */
+=======
+>>>>>>> 05788b03f0c03408c24524831250e1950b58619a
 }

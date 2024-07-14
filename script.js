@@ -3,7 +3,10 @@ document.getElementById('send-btn').addEventListener('click', function() {
     if (userInput.trim() !== "") {
         addMessage(userInput, 'user');
         document.getElementById('user-input').value = '';
+<<<<<<< HEAD
         addToChatHistory(userInput); // Agregar mensaje al historial de chat
+=======
+>>>>>>> 05788b03f0c03408c24524831250e1950b58619a
         getBotResponse(userInput);
     }
 });
@@ -14,6 +17,7 @@ document.getElementById('user-input').addEventListener('keypress', function(e) {
     }
 });
 
+<<<<<<< HEAD
 function addToChatHistory(message) {
     const historyContainer = document.getElementById('chat-history');
     const messageElement = document.createElement('div');
@@ -23,6 +27,8 @@ function addToChatHistory(message) {
     historyContainer.scrollTop = historyContainer.scrollHeight; // Hacer scroll hacia abajo al agregar un nuevo mensaje
 }
 
+=======
+>>>>>>> 05788b03f0c03408c24524831250e1950b58619a
 function addMessage(text, sender) {
     const message = document.createElement('div');
     message.className = 'message ' + sender;
@@ -102,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Redireccionar a la página actual (recargar la página)
         window.location.href = 'index.html'; // Cambia 'index.html' por la ruta correcta si es diferente
     });
+<<<<<<< HEAD
 });
 
 // Función para añadir mensajes al historial
@@ -112,3 +119,6 @@ function addToChatHistory(message) {
     messageElement.textContent = message.length > 50 ? message.substring(0, 50) + '...' : message; // Limita el mensaje a 50 caracteres
     history.appendChild(messageElement);
 }
+=======
+});
+>>>>>>> 05788b03f0c03408c24524831250e1950b58619a

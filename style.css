@@ -43,12 +43,14 @@ header {
 .header__nav ul {
     list-style: none; /* Elimina los puntos de la lista */
     display: flex;
+    position: relative; /* Necesario para el posicionamiento absoluto de los submenús */
     
 }
 
 .header__nav ul li {
     margin: 0 15px; /* Espaciado entre los elementos de la navegación */
     margin-top: 10px;
+    position: relative; /* Necesario para el posicionamiento absoluto de los submenús */
 }
 
 .header__nav ul li a {
@@ -166,3 +168,29 @@ body {
     height: auto;
 }
 
+.authors-names {
+    display: none; /* Ocultar por defecto */
+    position: absolute; /* Posicionarlo encima del resto del contenido */
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ccc; /* Borde gris */
+    padding: 10px; /* Espaciado interno */
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+    top: 100%; /* Alinearlo justo debajo del enlace */
+    left: 0; /* Alinearlo con el borde izquierdo del enlace */
+    color: #000; /* Asegurarse de que el texto sea visible */
+    width: 150px; /* Asegurar un ancho definido */
+}
+
+.authors-link:hover + .authors-names {
+    display: block; /* Mostrar cuando el cursor esté sobre el enlace */
+
+}
+
+.question-answer {
+    border: 1px solid #ccc; /* Borde gris */
+    padding: 15px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espaciado inferior entre cuadros */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo del cuadro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}

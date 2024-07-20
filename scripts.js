@@ -15,4 +15,7 @@ function toggleSection(element) {
     return false;
 }
 
-
+// Añadir evento para reiniciar la página al hacer clic en el logo
+document.getElementById('logoButton').addEventListener('click', function() {
+    location.reload(); // Reinicia la página
+});

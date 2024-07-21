@@ -15,7 +15,6 @@ header {
     display: flex; /* Flexbox para alinear elementos */
     align-items: center; /* Alinea verticalmente los elementos */
     position: relative; /* Posición relativa para elementos fijos posicionados */
-    overflow: hidden; 
     width: 100%; /* Ajuste automático de ancho para mantener la proporción */
     height: 56px; /* Ajuste automático de altura para mantener la proporción */
  
@@ -168,24 +167,28 @@ body {
     height: auto;
 }
 
+/* Estilos para mostrar los autores al pasar el mouse */
 .authors-names {
     display: none; /* Ocultar por defecto */
-    position: absolute; /* Posicionarlo encima del resto del contenido */
+    position: absolute; /* Posicionarlo relativo al li */
     background-color: #fff; /* Fondo blanco */
     border: 1px solid #ccc; /* Borde gris */
     padding: 10px; /* Espaciado interno */
     z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
-    top: 100%; /* Alinearlo justo debajo del enlace */
+    top: 30px; /* Ajustar según sea necesario para alinear correctamente */
     left: 0; /* Alinearlo con el borde izquierdo del enlace */
     color: #000; /* Asegurarse de que el texto sea visible */
     width: 150px; /* Asegurar un ancho definido */
 }
 
-.authors-link:hover + .authors-names {
-    display: block; /* Mostrar cuando el cursor esté sobre el enlace */
-
+.authors-item:hover .authors-names {
+    display: block; /* Mostrar cuando el cursor esté sobre el enlace o el li */
 }
 
+.authors-names p {
+    margin: 0; /* Eliminar margen de los párrafos dentro del contenedor */
+    color: #000; /* Asegurarse de que el texto sea negro */
+}
 .question-answer {
     border: 1px solid #ccc; /* Borde gris */
     padding: 15px; /* Espaciado interno */

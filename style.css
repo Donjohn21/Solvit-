@@ -1,0 +1,199 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*START CSS PARA EL HEADER */
+header {
+
+   
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 0; /* Espaciado interno para el header */
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    position: relative; /* Posición relativa para elementos fijos posicionados */
+    width: 100%; /* Ajuste automático de ancho para mantener la proporción */
+    height: 56px; /* Ajuste automático de altura para mantener la proporción */
+ 
+}
+
+.header__container {
+    max-width: 1000px;
+    margin-left: center; /* Centra el container del header en la página */
+    padding: 0 20px;
+    display: flex;
+    text-align: center;
+    
+}
+
+.block {
+    width: 150px; /* Ajuste automático de ancho para mantener la proporción */
+    height: 150px; /* Ajuste automático de altura para mantener la proporción */
+    margin-left: 15px; /* Ajusta el margen según sea necesario */
+}
+
+.header__nav {
+    margin-left: auto; /* Mueve la navegación hacia la derecha */
+}
+
+.header__nav ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex;
+    position: relative; /* Necesario para el posicionamiento absoluto de los submenús */
+    
+}
+
+.header__nav ul li {
+    margin: 0 15px; /* Espaciado entre los elementos de la navegación */
+    margin-top: 10px;
+    position: relative; /* Necesario para el posicionamiento absoluto de los submenús */
+}
+
+.header__nav ul li a {
+    color: #dbd5d5; /* Color del texto del enlace */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    font-size: 15px;
+    transition: color 0.3s; /* Transición suave para el cambio de color */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header__nav ul li a:hover {
+    color: #27a0f7; /* Color del enlace al pasar el ratón por encima */
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .header__container {
+        padding: 0 10px; /* Reducción del padding en pantallas más pequeñas */
+    }
+    
+    .block {
+        width: 100px; /* Ejemplo de tamaño más pequeño para el logo en pantallas pequeñas */
+    }
+    
+    .header__nav ul li {
+        margin: 0 10px; /* Espaciado reducido entre elementos de la navegación en pantallas pequeñas */
+    }
+    
+    .header__nav ul li a {
+        font-size: 14px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+}
+ 
+ .menu__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+ }
+ 
+ .menu__icon {
+    width: 30px;
+    height: 35px;
+    margin-left: 1000px;
+ }
+ 
+/*END CSS PARA EL HEADER */
+
+
+
+
+
+/*START CSS PARA EL BODY */
+
+body {
+    background-color: #0e9ab3; /* Color de fondo para el cuerpo */
+    font-size: 16px; /* Tamaño base de la fuente */
+    line-height: 1.6; /* Altura de línea para una mejor legibilidad */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: flex-start; /* Alinea el contenido arriba */
+    min-height: 100vh; /* Mínima altura para ocupar toda la pantalla */
+    padding-top: 0; /* Espaciado superior para evitar solapamientos con el header */
+}
+
+
+.main-content {
+    max-width: 100%px; /* Ancho máximo del contenido principal */
+    display: flex; /* Contenedor de flexbox para columnas */
+    justify-content: space-between; /* Espaciado entre columnas */
+    margin: 20px; /* Margen exterior */
+    padding: 20px; /* Espaciado interno */
+    background-color: #fff; /* Color de fondo del contenido */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.section {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    padding: 20px; /* Espaciado interno */
+    margin: 0 10px; /* Margen lateral */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo de la sección */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.section-header {
+    font-size: 24px; /* Tamaño de fuente del encabezado de sección */
+    color: #333; /* Color de texto para el encabezado de sección */
+    margin-bottom: 15px; /* Espaciado inferior del encabezado de sección */
+    border-bottom: 2px solid #ccc; /* Línea divisoria debajo del encabezado */
+    padding-bottom: 5px; /* Espaciado inferior para la línea divisoria */
+}
+
+
+.section-content {
+    margin-top: 10px; /* Espaciado superior del contenido */
+    color: #666; /* Color de texto para el contenido */
+}
+
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
+    }
+
+    .section {
+        margin: 10px 0; /* Ajuste de margen en pantallas pequeñas */
+    }
+}
+
+.toggle-image {
+    cursor: pointer;
+    width: 30px;
+    height: auto;
+}
+
+/* Estilos para mostrar los autores al pasar el mouse */
+.authors-names {
+    display: none; /* Ocultar por defecto */
+    position: absolute; /* Posicionarlo relativo al li */
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ccc; /* Borde gris */
+    padding: 10px; /* Espaciado interno */
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+    top: 30px; /* Ajustar según sea necesario para alinear correctamente */
+    left: 0; /* Alinearlo con el borde izquierdo del enlace */
+    color: #000; /* Asegurarse de que el texto sea visible */
+    width: 150px; /* Asegurar un ancho definido */
+}
+
+.authors-item:hover .authors-names {
+    display: block; /* Mostrar cuando el cursor esté sobre el enlace o el li */
+}
+
+.authors-names p {
+    margin: 0; /* Eliminar margen de los párrafos dentro del contenedor */
+    color: #000; /* Asegurarse de que el texto sea negro */
+}
+.question-answer {
+    border: 1px solid #ccc; /* Borde gris */
+    padding: 15px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espaciado inferior entre cuadros */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo del cuadro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}

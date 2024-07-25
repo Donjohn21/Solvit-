@@ -14,11 +14,11 @@ header {
     padding: 10px 0; /* Espaciado interno para el header */
     display: flex; /* Flexbox para alinear elementos */
     align-items: center; /* Alinea verticalmente los elementos */
-    position: relative; /* Posición relativa para elementos fijos posicionados */
     width: 100%; /* Ajuste automático de ancho para mantener la proporción */
     height: 56px; /* Ajuste automático de altura para mantener la proporción */
  
 }
+
 
 .header__container {
     max-width: 1000px;
@@ -58,6 +58,7 @@ header {
     font-size: 15px;
     transition: color 0.3s; /* Transición suave para el cambio de color */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
 }
 
 .header__nav ul li a:hover {
@@ -74,32 +75,58 @@ header {
         width: 100px; /* Ejemplo de tamaño más pequeño para el logo en pantallas pequeñas */
     }
     
-    .header__nav ul li {
-        margin: 0 10px; /* Espaciado reducido entre elementos de la navegación en pantallas pequeñas */
-    }
-    
-    .header__nav ul li a {
-        font-size: 14px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
-    }
+   
 }
- 
- .menu__button {
-    background: none;
-    border: none;
-    cursor: pointer;
- }
- 
- .menu__icon {
-    width: 30px;
-    height: 35px;
-    margin-left: 1000px;
- }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0); /* Color blanco con 80% de opacidad */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(14, 154, 179, 0.8); /* Color con 80% de opacidad */
+}
+
+.header__nav ul li:hover .dropdown-content {
+    display: block;
+}
+
  
 /*END CSS PARA EL HEADER */
+.saltoDPG {
+    padding: 8px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
 
+.saltoDPG:hover {
+    background-color: #2c3e50;
+}
 
-
-
+.button-container {
+    position: absolute;
+  
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; 
+}
 
 /*START CSS PARA EL BODY */
 
@@ -113,17 +140,17 @@ body {
     padding-top: 0; /* Espaciado superior para evitar solapamientos con el header */
 }
 
-
 .main-content {
-    max-width: 100%px; /* Ancho máximo del contenido principal */
+    max-width: 100%;
     display: flex; /* Contenedor de flexbox para columnas */
     justify-content: space-between; /* Espaciado entre columnas */
-    margin: 20px; /* Margen exterior */
+    margin: 50px; /* Margen exterior */
     padding: 20px; /* Espaciado interno */
     background-color: #fff; /* Color de fondo del contenido */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative; /* Necesario para la posición absoluta del botón */
 }
 
 .section {
@@ -134,6 +161,7 @@ body {
     background-color: #f9f9f9; /* Color de fondo de la sección */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 50px;
 }
 
 .section-header {
@@ -144,12 +172,11 @@ body {
     padding-bottom: 5px; /* Espaciado inferior para la línea divisoria */
 }
 
-
 .section-content {
     margin-top: 10px; /* Espaciado superior del contenido */
     color: #666; /* Color de texto para el contenido */
+    
 }
-
 
 @media (max-width: 768px) {
     .main-content {
@@ -167,33 +194,56 @@ body {
     height: auto;
 }
 
-/* Estilos para mostrar los autores al pasar el mouse */
-.authors-names {
-    display: none; /* Ocultar por defecto */
-    position: absolute; /* Posicionarlo relativo al li */
-    background-color: #fff; /* Fondo blanco */
-    border: 1px solid #ccc; /* Borde gris */
-    padding: 10px; /* Espaciado interno */
-    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
-    top: 30px; /* Ajustar según sea necesario para alinear correctamente */
-    left: 0; /* Alinearlo con el borde izquierdo del enlace */
-    color: #000; /* Asegurarse de que el texto sea visible */
-    width: 150px; /* Asegurar un ancho definido */
+
+/* Sección de Testimonios */
+.testimonials {
+    margin-top: 20px;
 }
 
-.authors-item:hover .authors-names {
-    display: block; /* Mostrar cuando el cursor esté sobre el enlace o el li */
+.testimonial {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    
 }
 
-.authors-names p {
-    margin: 0; /* Eliminar margen de los párrafos dentro del contenedor */
-    color: #000; /* Asegurarse de que el texto sea negro */
+.testimonial p {
+    font-style: italic;
+    color: #333;
 }
-.question-answer {
-    border: 1px solid #ccc; /* Borde gris */
-    padding: 15px; /* Espaciado interno */
-    margin-bottom: 10px; /* Espaciado inferior entre cuadros */
-    border-radius: 5px; /* Bordes redondeados */
-    background-color: #f9f9f9; /* Color de fondo del cuadro */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+.testimonial cite {
+    display: block;
+    text-align: right;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Sección de Videos Tutoriales */
+.videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.videos iframe {
+    flex: 1;
+    max-width: 100%;
+    border: none;
+}
+
+
+/* Ajustes para imágenes toggles */
+.toggle-image {
+    cursor: pointer;
+    width: 30px;
+    height: auto;
+}
+
+/* Ajustes generales para el layout */
+.section {
+    margin: 20px 0; /* Ajuste de margen para separación entre secciones */
 }
